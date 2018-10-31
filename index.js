@@ -154,9 +154,11 @@ function RingPop(options) {
         enforceKeyConsistency: options.enforceKeyConsistency
     });
 
-    this.ring = new this.Ring({
-        hashFunc: this.hashFunc
-    });
+    var hashRingOpts = _.defaults({
+        hashfunc: this.hashfunc
+    }, this.config.get('hashRingOpts'))
+
+    this.ring = new this.Ring(hashRingOpts);
 
     this.dissemination = new Dissemination(this);
 
