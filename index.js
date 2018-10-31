@@ -156,7 +156,7 @@ function RingPop(options) {
 
     var hashRingOpts = _.defaults({
         hashfunc: this.hashfunc
-    }, this.config.get('hashRingOpts'))
+    }, this.config.get('hashRingOpts'));
 
     this.ring = new this.Ring(hashRingOpts);
 
